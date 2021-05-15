@@ -9,17 +9,17 @@ class UserStatus extends Model
     //
 
     public $table = 'user_status';
-    public $timestamps = 'false';
+    public $timestamps = false;
 
-    protected $fillable = ['id_user','id_questionare'];
+    protected $fillable = ['id_user','id_option'];
 
     public function user() {
         return $this -> belongsTo('App\User'); 
-    };
+    }
 
     public function questionare() {
         return $this -> belongsTo('App\Questionare');
-    };
+    }
 
 
 }

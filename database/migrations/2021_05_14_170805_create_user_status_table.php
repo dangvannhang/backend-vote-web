@@ -17,7 +17,7 @@ class CreateUserStatusTable extends Migration
             $table->id();
             // $table->timestamps();
             $table->foreignId('id_user');
-            $table->foreignId('id_questionare');
+            $table->foreignId('id_option');
             
         });
     }

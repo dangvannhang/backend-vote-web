@@ -16,6 +16,6 @@ class Topic extends Model
 
     public function questionare() {
         return $this->hasMany('App\Questionare');
-    };
+    }
 
 }
