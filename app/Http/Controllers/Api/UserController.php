@@ -31,7 +31,7 @@ class UserController extends Controller
                     ->get();
                 // return $user_exist;
 
-                return response(200)->json($user_exist);
+                return response()->json($user_exist,200);
             } 
             // else email not exists and create a new user for this email
             else {
@@ -41,12 +41,12 @@ class UserController extends Controller
                 $new_user -> email = $email;
                 $new_user -> save();
 
-                return response(201)->json($new_user);
+                return response()->json($new_user,201);
             }
 
         } else {
             // return response()->json('false',403);
-            return response(401)->json('false');
+            return response()->json('false',401);
         }
         
     }
