@@ -17,13 +17,13 @@ class TopicSeeder extends Seeder
         DB::table('topic')->insert([
             [
                 'title' => 'Food',
-                'image'=> 'https://s3-eu-west-1.amazonaws.com/uploads.playbaamboozle.com/uploads/images/152185/1607591595_198751',
+                'image'=> 'https://lh3.googleusercontent.com/proxy/hInPyOF9QHAxJrcm2oOch67UdRqnZqudTacffZrKaeoAbQucdvbmbxargRgrhrxzjJhDEyvPPlB6kTDnLkTciGDEI11yB8cdAivce3BfpQsx_hOVzkMODDvD4Qv-jZcZv0_SVuGb9Lcaqw',
                 'description' => 'Most Popular Food in the World'
             ],
 
             [
                 'title' => 'Travel',
-                'image' => 'https://amilawfirm.com/wp-content/uploads/2019/05/auto-draft-3-6.jpg',
+                'image' => 'https://img.lovepik.com/photo/40009/8658.jpg_wh860.jpg',
                 'description' => "World's Best Places to Visit"
             ],
 
