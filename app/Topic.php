@@ -7,13 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Topic extends Model
 {
     //
-    public $timestamp = 'false';
+    public $timestamps = 'false';
     protected $table = 'topic';
 
     protected $fillable = [
         'title', 'image', 'description'
     ];
 
-    public function 
+    public function questionare() {
+        return $this->hasMany('App\Questionare');
+    };
 
 }
