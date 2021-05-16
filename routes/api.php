@@ -31,6 +31,8 @@ Route::get('questionare/{id}','Api\QuestionareController@getOptionQuestionare');
 
 // user status
 
+Route::get('user_status','Api\UserStatusController@getAll');
+
 //
 Route::get('user_status/{id}','Api\UserStatusController@getStatusUser');
 
