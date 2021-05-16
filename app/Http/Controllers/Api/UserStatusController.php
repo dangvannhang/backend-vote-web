@@ -25,14 +25,25 @@ class UserStatusController extends Controller
 
         // hien tai id_options la mot array
         foreach($id_options as $id_option) {
+
             $user_status = new UserStatus;
             $user_status -> id_user = $id_user;
             $user_status -> id_option = $id_option;
             $user_status -> save();
+
+
+            // bat dau lay lay cai option trong questionare
+            $find_option = Questionare::find($id_option);
+            // hien tai h da luu duoc status roi, khi luu thi dong thoi cung update lai luon value cua so lluong vote
+            $vote_option = $find_option->vote;
+
+            $find_option->vote=$vote_option + 1;
+
+            $find_option->save();
+
         }
 
-        // return response()->json($id_option);
-
+        // return ve het tat cac cac option ma user do da vote
         return $this->getStatusUser($id_user);
     }
 
@@ -41,6 +52,8 @@ class UserStatusController extends Controller
 
         return response()->json($all_status,200);
     }
+
+    public function
 
 }
 
