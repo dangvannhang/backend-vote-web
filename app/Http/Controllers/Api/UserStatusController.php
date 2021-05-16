@@ -44,7 +44,9 @@ class UserStatusController extends Controller
         }
 
         // return ve het tat cac cac option ma user do da vote
-        return $this->getStatusUser($id_user);
+        // return $this->getStatusUser($id_user);
+        // return response()->json(200);
+        return "abc";
     }
 
     public function getAll() {
@@ -53,7 +55,6 @@ class UserStatusController extends Controller
         return response()->json($all_status,200);
     }
 
-    public function
 
 }
 
