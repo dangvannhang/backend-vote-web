@@ -41,7 +41,9 @@ class UserController extends Controller
                 $new_user -> email = $email;
                 $new_user -> save();
 
-                return response()->json($new_user,201);
+                // return response()->json($new_user,201);
+                return $new_user;
+                
             }
 
         } else {
@@ -50,5 +52,7 @@ class UserController extends Controller
         }
         
     }
+
+    
 
 }
