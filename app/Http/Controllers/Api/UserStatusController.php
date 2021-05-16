@@ -21,7 +21,7 @@ class UserStatusController extends Controller
     public function addUserStatus(Request $request) {
 
         $id_user = $request->id_user;
-        $id_option = $request->id_option;
+        $id_options = $request->id_option;
 
         // $user_status = new UserStatus;
         // $user_status -> id_user = $id_user;
@@ -29,8 +29,21 @@ class UserStatusController extends Controller
         // $user_status -> save();
 
         // return response()->json($user_status,201);
+        
 
-        return response()->json($id_option);
+        // hien tai id_options la mot array
+        foreach($id_options as $id_option) {
+            $user_status = new UserStatus;
+            $user_status -> id_user = $id_user;
+            $user_status -> id_option = $id_option;
+            $user_status -> save();
+        }
+
+
+
+        // return response()->json($id_option);
+
+        return $this->getStatusUser($id_user);
     }
 
 }
