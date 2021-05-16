@@ -15,6 +15,8 @@ class UserController extends Controller
         
         $email = $request -> input('email');
         $array_email = explode("@",$email);
+
+        
         $prefix_email = $array_email[1];
         $nab_prefix = 'nab.com.au';
 
@@ -53,6 +55,6 @@ class UserController extends Controller
         
     }
 
-    
+
 
 }

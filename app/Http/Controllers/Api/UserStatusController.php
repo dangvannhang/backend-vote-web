@@ -30,7 +30,7 @@ class UserStatusController extends Controller
 
         // return response()->json($user_status,201);
 
-        return response()->json($id_user,$id_option);
+        return response()->json($id_option);
     }
 
 }
