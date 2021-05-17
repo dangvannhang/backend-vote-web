@@ -26,4 +26,18 @@ class QuestionareController extends Controller
 
         return response()->json($questionare,200);
     }
+
+    public function updateOption(Request $request,$id) {
+        $status = $request->status;
+        $option = Questionare::find($id);
+        $current_vote = $option->vote;
+        if($status == 'vote') {
+            $option->vote = $current_vote + 1;
+        } else if($status == 'unvote') {
+            $option->vote = $current_vote - 1;
+        }
+        return $option;
+    }
+
+
 }
