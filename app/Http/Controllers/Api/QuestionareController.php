@@ -31,11 +31,15 @@ class QuestionareController extends Controller
         $status = $request->status;
         $option = Questionare::find($id);
         $current_vote = $option->vote;
+        // test add something
         if($status == 'vote') {
             $option->vote = $current_vote + 1;
         } else if($status == 'unvote') {
             $option->vote = $current_vote - 1;
         }
+        $option -> save();
+
+
         return $option;
     }
 
