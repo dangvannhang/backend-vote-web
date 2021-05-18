@@ -13,7 +13,7 @@ class UserStatus extends Model
 
     protected $fillable = ['id_user','id_option'];
 
-    public function user() {
+    public function users() {
         return $this -> belongsTo('App\User'); 
     }
 

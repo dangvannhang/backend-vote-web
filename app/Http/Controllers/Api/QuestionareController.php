@@ -38,9 +38,6 @@ class QuestionareController extends Controller
             $option->vote = $current_vote - 1;
         }
         $option -> save();
-
-
-        return $option;
     }
 
 

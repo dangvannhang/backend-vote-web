@@ -36,6 +36,7 @@ Route::get('user_status','Api\UserStatusController@getAll');
 //
 Route::get('user_status/{id}','Api\UserStatusController@getStatusUser');
 
-Route::post('user_status','Api\UserStatusController@addUserStatus');
+Route::post('check_status','Api\UserStatusController@checkUserStatus');
+
 
 Route::post('option/update/{id}','Api\QuestionareController@updateOption');
