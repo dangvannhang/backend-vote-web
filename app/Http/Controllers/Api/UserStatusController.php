@@ -62,6 +62,5 @@ class UserStatusController extends Controller
         return $user_status;
     }
 
-
 }
 
