@@ -56,10 +56,8 @@ class UserStatusController extends Controller
             $new_user_status -> id_option = $id_option;
 
             $new_user_status ->save();
-            return $new_user_status;
         }
 
-        return $user_status;
     }
 
 }
