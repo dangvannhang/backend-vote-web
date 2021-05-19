@@ -29,8 +29,8 @@ class UserController extends Controller
             // if email exist
             if($user_email->count()) {
 
-                $user_exist=User::where('email',$email)
-                    ->get();
+                $user_exist=User::where('email',$email)->first();
+                  
                 // return $user_exist;
 
                 return response()->json($user_exist,200);
