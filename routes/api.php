@@ -20,9 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //
 Route::post('user/login','Api\UserController@login');
 //
-Route::get('topic','Api\TopicController@index');
+Route::get('questionare','Api\TopicController@index');
 //
-Route::get('options','Api\QuestionareController@index');
+Route::get('option','Api\QuestionareController@index');
 //
 Route::get('option/{id}','Api\QuestionareController@getOption');
 //
