@@ -28,6 +28,7 @@ class QuestionareController extends Controller
     }
 
     public function updateOption(Request $request,$id) {
+
         $status = $request->status;
         $option = Questionare::find($id);
         $current_vote = $option->vote;
@@ -38,7 +39,17 @@ class QuestionareController extends Controller
             $option->vote = $current_vote - 1;
         }
         $option -> save();
+
+        return response()->json($option);
     }
 
+    public function getTopicOfOption($id_option) {
+
+        $option = Questionare::find($id_option);
+        $id_topic = $option->id_topic;
+        
+        return $id_topic;
+
+    }
 
 }

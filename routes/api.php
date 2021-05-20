@@ -39,4 +39,8 @@ Route::get('user_status/{id}','Api\UserStatusController@getStatusUser');
 Route::post('check_status','Api\UserStatusController@checkUserStatus');
 
 
-Route::post('option/update/{id}','Api\QuestionareController@updateOption');
+Route::post('option/{id}','Api\QuestionareController@updateOption');
+
+
+// function help get topic of option
+Route::get('option/getTopic/{id}','Api\QuestionareController@getTopicOfOption');
