@@ -55,4 +55,14 @@ class UserController extends Controller
         
     }
 
+    public function loginAdmin(Request $request) {
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        $admin = User::where('email',$email)
+            ->where('password' , $password)
+            ->first();
+         
+        return $admin;
+    }
 }

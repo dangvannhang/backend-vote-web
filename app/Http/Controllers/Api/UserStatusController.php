@@ -59,6 +59,9 @@ class UserStatusController extends Controller
         }
 
     }
+    public function loginAdmin(Request $request) {
+
+    }
 
 }
 

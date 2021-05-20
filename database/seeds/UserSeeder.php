@@ -16,12 +16,10 @@ class UserSeeder extends Seeder
         //
 
         DB::table('users')->insert([
-            // [
-            //     'email' => 'dangvannhang107@gmail.com'
-            // ],
-            // [
-            //     'email' => 'dangvannhang087@gmail.com'
-            // ]
+            [
+                'email' => 'dangvannhang107@gmail.com',
+                'password' => 'password',
+            ],
         ]);
     }
 }

@@ -19,6 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 //
 Route::post('user/login','Api\UserController@login');
+
+Route::post('admin/login','Api\UserController@loginAdmin');
+
 //
 Route::get('questionare','Api\TopicController@index');
 //
