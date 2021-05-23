@@ -61,6 +61,7 @@ class UserController extends Controller
 
         $admin = User::where('email',$email)
             ->where('password' , $password)
+            ->where('role','admin')
             ->first();
          
         return $admin;
