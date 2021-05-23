@@ -19,7 +19,7 @@ class CreateQuestionareTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('image');
-            $table->integer('vote');
+            $table->integer('vote')->default(0);;
             // $table->timestamps();
         });
     }

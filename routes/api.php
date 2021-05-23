@@ -47,3 +47,6 @@ Route::post('option/{id}','Api\QuestionareController@updateOption');
 
 // function help get topic of option
 Route::get('option/getTopic/{id}','Api\QuestionareController@getTopicOfOption');
+
+Route::post('topic/new','Api\TopicController@createTopic');
+Route::post('questionare/new','Api\QuestionareController@createOption');

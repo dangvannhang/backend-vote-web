@@ -52,4 +52,15 @@ class QuestionareController extends Controller
 
     }
 
+    public function createOption(Request $request){
+        $new_option = new Questionare;
+        $new_option -> id_topic = $request -> input('id_topic');
+        $new_option -> title = $request -> input('title');
+        $new_option -> image = $request -> input('image');
+        $new_option -> description = $request -> input('description');
+        $new_option -> save();
+
+        return response()->json($new_option,201);
+    }
+
 }
