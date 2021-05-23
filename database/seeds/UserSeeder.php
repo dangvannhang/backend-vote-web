@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
             [
                 'email' => 'dangvannhang107@gmail.com',
                 'password' => 'password',
+                'role' => 'admin'
             ],
         ]);
     }

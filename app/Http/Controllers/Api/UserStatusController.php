@@ -30,16 +30,11 @@ class UserStatusController extends Controller
     public function checkUserStatus(Request $request) {
 
         $id_user = $request->id_user;
-        $id_option = $request->id_option;
+        $id_topic = $request->id_topic;
 
-        // $id_user_status = 
-        // kiem tra thu hai cai do da ton tai hay chua
-
-        // $user_status = UserStatus::where('id_user',$id_user)
-        //     ->where('id_option',$id_option)->get();
         $user_status = DB::table('user_status')
             ->where('id_user',$id_user)
-            ->where('id_option',$id_option)
+            ->where('id_topic',$id_topic)
             ->first();
 
         // if exist $user_status
@@ -47,16 +42,20 @@ class UserStatusController extends Controller
             // $user_status->delete();
             $user_status = DB::table('user_status')
             ->where('id_user',$id_user)
-            ->where('id_option',$id_option)
+            ->where('id_topic',$id_topic)
             ->delete();
+            // return response()-;
         } else {
             
             $new_user_status = new UserStatus;
             $new_user_status ->id_user = $id_user;
-            $new_user_status -> id_option = $id_option;
+            $new_user_status -> id_topic = $id_topic;
 
             $new_user_status ->save();
+
+            return response()->json($new_user_status,201);
         }
+        
 
     }
     public function loginAdmin(Request $request) {
