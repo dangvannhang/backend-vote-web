@@ -63,4 +63,10 @@ class QuestionareController extends Controller
         return response()->json($new_option,201);
     }
 
+    public function deleteOption($id) {
+        $option = Questionare::find($id);
+        $option->delete();
+
+        return "Delete option finish";
+    }
 }

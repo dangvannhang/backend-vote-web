@@ -50,3 +50,6 @@ Route::get('option/getTopic/{id}','Api\QuestionareController@getTopicOfOption');
 
 Route::post('topic/new','Api\TopicController@createTopic');
 Route::post('questionare/new','Api\QuestionareController@createOption');
+
+Route::get('topic/delete/{id}','Api\TopicController@deleteTopic');
+Route::get('option/delete/{id}','Api\QuestionareController@deleteOption');

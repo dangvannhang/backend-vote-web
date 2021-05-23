@@ -34,4 +34,13 @@ class TopicController extends Controller
 
         return response()->json($new_topic);
     }
+    public function deleteTopic($id) {
+
+        $topic=Topic::find($id);;
+
+        $topic->delete();
+
+        return "Delete finish";
+
+    }
 }
