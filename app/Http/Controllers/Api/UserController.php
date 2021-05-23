@@ -64,6 +64,12 @@ class UserController extends Controller
             ->where('role','admin')
             ->first();
          
-        return $admin;
+        // return $admin;
+        if($admin) {
+            return response()->json($admin,200);
+        }
+        else {
+            return response()->json('false',401);
+        }
     }
 }
