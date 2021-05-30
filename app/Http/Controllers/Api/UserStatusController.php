@@ -59,6 +59,6 @@ class UserStatusController extends Controller
 
     }
 
-
+ 
 }
 
