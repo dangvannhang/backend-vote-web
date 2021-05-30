@@ -50,8 +50,8 @@ class UserController extends Controller
     // }
 
     public function login(Request $request) {
-        $iEmail = $request->input('input_email');
-        $iPass = $request->input('input_password');
+        $iEmail = $request->email;
+        $iPass = $request->password;
 
         $initial_pass = 'Pas@word123!';
 
