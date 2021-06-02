@@ -42,8 +42,9 @@ class UserController extends Controller
 
                     $new_user = new User;
                     $new_user -> email = $iEmail;
-
+                    $new_user ->role = 'user';
                     $new_user ->save();
+                    $new_user -> token = $new_user->createToken('App')->accessToken;
 
                     return response()->json($new_user,201);
                 }
