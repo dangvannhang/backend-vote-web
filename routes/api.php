@@ -21,7 +21,6 @@ Route::get('user','Api\UserController@showUser');
 //
 Route::post('/user/login','Api\UserController@login');
 
-Route::post('admin/login','Api\UserController@loginAdmin');
 
 //
 Route::get('questionare','Api\TopicController@index');
