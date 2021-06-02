@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 
 use Illuminate\Http\Request;
 use App\User;
@@ -26,10 +28,16 @@ class UserController extends Controller
         $exist_user = User::where('email',$iEmail)
             ->where('password',$iPass)
             ->first();
+
         if(!empty($exist_user)) { // neu ma ton tai thi return ra object do luon 
+
+            $exist_user->token = $exist_user->createToken('App')->accessToken;
             return response()->json($exist_user,200);
+
         } else { // neu khong co tai khoan thi chi co tai khoan ms va tai khoan khong hop le
+
             if($prefix_email === $prefix_nab_email) { // kiem tra tien to email
+
                 if($iPass === $initial_pass) {
 
                     $new_user = new User;
