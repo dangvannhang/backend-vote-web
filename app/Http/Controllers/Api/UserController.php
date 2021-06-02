@@ -60,4 +60,8 @@ class UserController extends Controller
 
         return response()->json($users,200);
     }
+
+    public function userInfor(Request $request) {
+        return response()->json($request->user('api'));
+    }
 }

@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('user','Api\UserController@showUser');
+Route::get('user','Api\UserController@showUser'); // get all user of app
 //
 Route::post('/user/login','Api\UserController@login');
-
+Route::get('user/infor','Api\UserController@userInfor');
 
 //
 Route::get('questionare','Api\TopicController@index');
