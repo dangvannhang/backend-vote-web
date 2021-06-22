@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Selection;
+use App\UserVoted;
 
 class SelectionController extends Controller
 {
@@ -30,12 +31,20 @@ class SelectionController extends Controller
     public function voteSelection(Request $request) {
         $id_selection = $request->id_selection;
         $id_topic = $request->id_topic;
+        $id_user = $request -> id_user;
 
         // find and increase count vote
         $selection = Selection::find($id_selection);
         $current_vote = $selection->count_voted;
         $selection -> count_voted = $current_vote + 1; 
         $selection -> save();
+        
+        // save data for user_voted table
+        $user_voted = new UserVoted;
+        $user_voted -> id_user = $id_user;
+        $user_voted -> id_selection = $id_selection;
+        $user_voted -> id_topic = $id_topic;
+        $user_voted -> save();
 
         // get all selection in this topic
         $selections = Selection::where('id_topic',$id_topic)->get();
@@ -55,11 +64,4 @@ class SelectionController extends Controller
         return response()->json($new_option,201);
     }
     
-
-    public function deleteOption($id) {
-        $option = Questionare::find($id);
-        $option->delete();
-
-        return "Delete option finish";
-    }
 }

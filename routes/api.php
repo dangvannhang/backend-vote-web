@@ -22,8 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login','Api\UserController@login');
 Route::get('user/check','Api\UserController@userCheck');
 Route::get('user/index','Api\UserController@index');
-
-
+Route::get('user/voted/{id}/infor','Api\UserVotedController@getInforUserVoted');
+Route::get('user/voted/index','Api\UserVotedController@getAll');
 
 
 // api related with topics
