@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQuestionareTable extends Migration
+class CreateSelectionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateQuestionareTable extends Migration
      */
     public function up()
     {
-        Schema::create('questionare', function (Blueprint $table) {
+        Schema::create('selections', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_topic');
-            $table->string('title');
-            $table->string('description');
-            $table->string('image');
-            $table->integer('vote')->default(0);;
-            // $table->timestamps();
+            $table->string('title_selection');
+            $table->string('descr_selection');
+            $table->string('image_selection');
+            $table->integer('count_voted')->default(0);;
         });
     }
 
@@ -31,6 +30,6 @@ class CreateQuestionareTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questionare');
+        Schema::dropIfExists('selections');
     }
 }

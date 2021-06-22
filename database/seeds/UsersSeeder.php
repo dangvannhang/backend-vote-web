@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 
-class UserSeeder extends Seeder
+class UsersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             [
                 'email' => 'dangvannhang107@gmail.com',
                 'password' => 'password',
-                'role' => 'creator'
+                'role' => 'admin'
             ],
         ]);
     }

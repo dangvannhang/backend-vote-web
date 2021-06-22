@@ -54,15 +54,14 @@ class UserController extends Controller
             }
         }
     }
+    public function index(){
 
-  
-    public function showUser() {
-        $users = User::all();
-
-        return response()->json($users,200);
+        $users= User::all();
+        return response()->json($users, 200);
     }
 
-    public function userInfor(Request $request) {
+    public function userCheck(Request $request) {
         return response()->json($request->user('api'));
     }
+
 }

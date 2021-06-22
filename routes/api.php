@@ -17,39 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('user','Api\UserController@showUser'); // get all user of app
-//
-Route::post('/user/login','Api\UserController@login');
-Route::get('user/infor','Api\UserController@userInfor');
 
-//
-Route::get('questionare','Api\TopicController@index');
-//
-Route::get('option','Api\QuestionareController@index');
-//
-Route::get('option/{id}','Api\QuestionareController@getOption');
-//
-Route::get('questionare/{id}','Api\QuestionareController@getOptionQuestionare');
+// api related with users
+Route::post('login','Api\UserController@login');
+Route::get('user/check','Api\UserController@userCheck');
+Route::get('user/index','Api\UserController@index');
 
+// api related with topics
 
-// user status
+// api related with selections
 
-Route::get('user_status','Api\UserStatusController@getAll');
-
-//
-Route::get('user_status/{id}','Api\UserStatusController@getStatusUser');
-
-Route::post('check_status','Api\UserStatusController@checkUserStatus');
-
-
-Route::post('option/{id}','Api\QuestionareController@updateOption');
-
-
-// function help get topic of option
-Route::get('option/getTopic/{id}','Api\QuestionareController@getTopicOfOption');
-
-Route::post('topic/new','Api\TopicController@createTopic');
-Route::post('questionare/new','Api\QuestionareController@createOption');
-
-Route::get('topic/delete/{id}','Api\TopicController@deleteTopic');
-Route::get('option/delete/{id}','Api\QuestionareController@deleteOption');
+// api related with voted
