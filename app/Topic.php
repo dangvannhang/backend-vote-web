@@ -8,14 +8,14 @@ class Topic extends Model
 {
     //
     public $timestamps = false;
-    protected $table = 'topic';
+    protected $table = 'topics';
 
     protected $fillable = [
-        'title', 'image', 'description'
+        'title_topic', 'image_topic', 'descr_topic'
     ];
 
-    public function questionare() {
-        return $this->hasMany('App\Questionare');
-    }
+    // public function questionare() {
+    //     return $this->hasMany('App\Questionare');
+    // }
 
 }

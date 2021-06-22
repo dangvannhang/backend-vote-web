@@ -21,15 +21,15 @@ class User extends Authenticatable
     public $timestamps = false;
     
     protected $fillable = [
-        'email'
+        'email','role'
     ];
     protected $hidden = [
         'password', 'remember_token',
     ];
 
 
-    public function users_status() {
-        return $this->belongsTo('App\UserStatus');
-    }
+    // public function users_status() {
+    //     return $this->belongsTo('App\UserStatus');
+    // }
 
 }

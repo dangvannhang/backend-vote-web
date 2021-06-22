@@ -4,18 +4,18 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Questionare;
+use App\Selection;
 use App\Topic;
-use App\UserStatus;
+use App\UserVoted;
 use Illuminate\Support\Facades\DB;
 
 
-class UserStatusController extends Controller
+class UserVotedController extends Controller
 {
     //
 
     public function  getStatusUser($id_user) {
-        $user_status = UserStatus::where('id_user',$id_user)->get();
+        $user_status = UserVoted::where('id_user',$id_user)->get();
 
         return response()->json($user_status,200);
     }

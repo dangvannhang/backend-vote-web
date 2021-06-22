@@ -17,6 +17,7 @@ class CreateUserVotedTable extends Migration
             $table->id();
             $table->foreignId('id_user');
             $table->foreignId('id_selection');
+            $table->foreignId('id_topic');
         });
     }
 

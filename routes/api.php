@@ -23,8 +23,21 @@ Route::post('login','Api\UserController@login');
 Route::get('user/check','Api\UserController@userCheck');
 Route::get('user/index','Api\UserController@index');
 
+
+
+
 // api related with topics
+Route::get('topic/index','Api\TopicController@index');
+Route::get('topic/{id}','Api\TopicController@getId');
+Route::post('topic/new','Api\TopicController@createTopic');
+
 
 // api related with selections
+Route::get('selection/index','Api\SelectionController@index');
+Route::get('selection/{id}','Api\SelectionController@getId');
+Route::get('topic/{id}/selection/index','Api\SelectionController@getSelectionTopic');
+Route::post('topic/{id}/selection/new','Api\SelectionController@createSelection');
+
 
 // api related with voted
+Route::post('topic/vote','Api\SelectionController@voteSelection');
