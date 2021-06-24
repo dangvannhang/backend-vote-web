@@ -29,7 +29,7 @@ class UserController extends Controller
             ->where('password',$iPass)
             ->first();
 
-        if(!empty($exist_user)) { // neu ma ton tai thi return ra object do luon 
+        if(!is_null($exist_user)) { // neu ma ton tai thi return ra object do luon 
 
             $exist_user->token = $exist_user->createToken('App')->accessToken;
             return response()->json($exist_user,200);
@@ -42,11 +42,14 @@ class UserController extends Controller
 
                     $new_user = new User;
                     $new_user -> email = $iEmail;
-                    $new_user ->role = 'user';
                     $new_user ->save();
+
                     $new_user -> token = $new_user->createToken('App')->accessToken;
 
                     return response()->json($new_user,201);
+                }
+                else {
+                    return response()->json('Login Fail',401);
                 }
             }
             else {
@@ -62,6 +65,16 @@ class UserController extends Controller
 
     public function userCheck(Request $request) {
         return response()->json($request->user('api'));
+    }
+    function createNewUser(Request $request){
+        $email = $request->email;
+        $password = $request->password;
+
+        $new_user = new User;
+        $new_user->email = $email;
+        $new_user->save();
+
+        return $new_user;
     }
 
 }

@@ -22,7 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login','Api\UserController@login');
 Route::get('user/check','Api\UserController@userCheck');
 Route::get('user/index','Api\UserController@index');
-Route::get('user/voted/{id}/infor','Api\UserVotedController@getInforUserVoted');
+Route::get('user/{id}/voted/infor','Api\UserVotedController@getInforUserVoted');
 Route::get('user/voted/index','Api\UserVotedController@getAll');
 
 
@@ -41,3 +41,9 @@ Route::post('topic/{id}/selection/new','Api\SelectionController@createSelection'
 
 // api related with voted
 Route::post('topic/vote','Api\SelectionController@voteSelection');
+
+
+
+
+// api testing
+Route::post('/user/new','Api\UserController@createNewUser');
