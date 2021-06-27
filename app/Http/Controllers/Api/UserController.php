@@ -18,7 +18,7 @@ class UserController extends Controller
         $iEmail = $request->email;
         $iPass = $request->password;
 
-        $initial_pass = 'Pas@word123!';
+        $initial_pass = 'user';
 
         $concat_email = explode('@',$iEmail);
         $prefix_email = $concat_email[1];
